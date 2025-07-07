@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Inspector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #info {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #222;
+      color: #0f0;
+      padding: 10px;
+      font-size: 14px;
+      line-height: 1.4;
+      z-index: 9999;
+      white-space: pre-wrap;
+    }
+
+    .dot {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: red;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <div id="info">Click anywhere to inspect the event</div>
+
+  <script>
+    document.addEventListener('click', function (event) {
+      // Create and place the red dot at click location
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      dot.style.left = event.clientX + 'px';
+      dot.style.top = event.clientY + 'px';
+      document.body.appendChild(dot);
+
+      // Useful interview-level and production-useful event details
+      const info = `
+Event Type:         ${event.type}
+Target Element:     <${event.target.tagName.toLowerCase()} id="${event.target.id}">
+Client (Viewport):  X: ${event.clientX}, Y: ${event.clientY}
+Page (Doc Scroll):  X: ${event.pageX}, Y: ${event.pageY}
+Screen Coords:      X: ${event.screenX}, Y: ${event.screenY}
+TimeStamp:          ${Math.round(event.timeStamp)} ms since page load
+Alt Key Pressed:    ${event.altKey}
+Ctrl Key Pressed:   ${event.ctrlKey}
+Shift Key Pressed:  ${event.shiftKey}
+Meta Key Pressed:   ${event.metaKey}
+Event Phase:        ${event.eventPhase} (${event.eventPhase === 1 ? "CAPTURING" : event.eventPhase === 2 ? "AT TARGET" : "BUBBLING"})
+Bubbles:            ${event.bubbles}
+Cancelable:         ${event.cancelable}
+Default Prevented:  ${event.defaultPrevented}
+      `;
+
+      document.getElementById('info').textContent = info;
+    }, false);
+  </script>
+</body>
+</html>

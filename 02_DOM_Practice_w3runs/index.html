@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Practice DOM Website</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header id="header">
+    <div class="logo">Your Logo</div>
+    <nav id="navbar">
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="https://www.youtube.com">Gallery</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Sub Heading</h2>
+      <div class="content">
+        <img id="image" src="cat.png" alt="Cute Cat" />
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus magni veritatis possimus, amet quo impedit accusamus alias perspiciatis excepturi debitis error ab illum rem officia pariatur! Eum molestiae numquam, tempora at dolores voluptates voluptate quod odio libero distinctio veniam sit perspiciatis? Mollitia voluptate neque esse nostrum provident veniam voluptatibus eius nulla repudiandae. Quod blanditiis, quibusdam dolorum at porro accusantium asperiores ipsam aliquid, dolores eaque rem, esse doloremque veniam ipsa voluptate totam adipisci
+        </p>
+      </div>
+      <ul>
+        <li>Lorem ipsum dolor sit amet 1.</li>
+        <li>Lorem ipsum dolor sit amet 2.</li>
+        <li>Lorem ipsum dolor sit amet 3.</li>
+        <li>Lorem ipsum dolor sit amet 4.</li>
+        <li>Lorem ipsum dolor sit amet 5.</li>
+      </ul>
+    </section>
+
+    <aside class="sidebar">
+      <ul>
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Gallery</li>
+        <li>Contact Us</li>
+      </ul>
+    </aside>
+  </main>
+  <section class="contact-form">
+  <h3>Contact Us</h3>
+  <form id="contactForm">
+    <div>
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" required />
+    </div>
+
+    <div>
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div>
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+
+    <button type="submit">Send Message</button>
+  </form>
+  <form id="contactForm1">
+        <div>
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" required />
+    </div>
+    </form>
+</section>
+
+
+  <footer id="footer">
+    &copy; Copyright
+  </footer>
+
+</body>
+
+</html>
+
+<script src="script.js"></script>

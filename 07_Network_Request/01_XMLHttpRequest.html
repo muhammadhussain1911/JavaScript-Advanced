@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+</head>
+<body style="display: flex; align-items: center; justify-content: center; ">
+    
+</body>
+<script>
+    const gitHubURL = 'https://api.github.com/users/muhammadhussain1911'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', gitHubURL)
+
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const Data = this.responseText
+            console.log(typeof Data); // response coming from URL is often of String type. 
+            const myConvertedData = JSON.parse(Data); // JSON.parse converts string type into JSON object.
+            console.log(typeof myConvertedData);
+            console.log(myConvertedData);
+            console.log(myConvertedData.followers);
+
+            const myDiv = document.createElement('div');
+            myDiv.setAttribute('class', 'styling');
+            myDiv.style.width = '400px';
+            myDiv.style.height = '600px';
+            myDiv.style.backgroundColor = '#bfbfbf';
+            myDiv.style.color = 'white';
+            myDiv.style.padding = '20px';
+            myDiv.innerHTML = `
+                <h2>${myConvertedData.name}</h2>
+                <p>Username: ${myConvertedData.login}</p>
+                <p>Followers: ${myConvertedData.followers}</p>
+                <img src="${myConvertedData.avatar_url}" width="100" style="border-radius: 50%;" />
+            `;
+
+            // ✅ Append to body
+            document.body.appendChild(myDiv);
+             
+        }
+    }
+    
+    xhr.send()
+    
+</script>
+</html>
