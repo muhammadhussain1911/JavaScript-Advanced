@@ -15,7 +15,8 @@ const user2 = createUser("Ali Raza", 7)
 const user3 = new createUser()
 
 user1.printMe()
-user2.incrementAge()
+// user2.incrementAge()
+console.log(user1.__proto__) // prints both functions, incrementAge and printMe
 
 /*
 
