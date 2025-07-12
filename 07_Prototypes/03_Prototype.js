@@ -1,3 +1,27 @@
+// Concept:
+
+function appUser(name) {
+  this.name = name;
+  this.isAdmin = false;
+}
+
+appUser.prototype.sayHello = function () {
+  return `Hello, I am ${this.name}`;
+};
+
+const user1 = new appUser("Ali");
+
+console.log(user1.sayHello());      // Hello, I am Ali
+console.log(user1.__proto__);       // Points to User.prototype
+console.log(user1.__proto__ === appUser.prototype); // true
+console.log(appUser.prototype.__proto__ === Object.prototype); // true
+console.log(user1.sayHello); // [Function (anonymous)]
+
+//Behind the scenes (in above code):
+// user1 --> User.prototype --> Object.prototype --> null
+
+
+// Practical implementation
 
 let myHeros = ["KHR", "DAAJ"]
 
