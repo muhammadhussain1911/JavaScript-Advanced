@@ -30,7 +30,11 @@ Welcome to my **Advanced JavaScript Practice Repository**, where I document my d
 - `XMLHttpRequest` vs `fetch` explained
 - Promises and async workflows with examples
 
-### 🔹 `08_OOP/`
+### 🔹 `08_Prototypes/`
+- Functions as Objects
+- `new` and `this` keyword
+
+### 🔹 `09_OOP/`
 - Constructor functions vs Classes
 - Inheritance in ES6
 - `bind`, `call`, and `this` context masterclasses
